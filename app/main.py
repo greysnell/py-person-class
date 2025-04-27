@@ -6,6 +6,7 @@ class Person:
         self.age = age
         Person.people[name] = self
 
+
 def create_person_list(people: list[dict]) -> list:
     person_list = []
     person_dicts = {person["name"]: person for person in people}
@@ -17,8 +18,7 @@ def create_person_list(people: list[dict]) -> list:
     for person in person_list:
         if "wife" in person_data and person_data["wife"] is not None:
             person.wife = Person.people[person_data["wife"]]
-        elif 'husband' in person_data and person_data["husband"] is not None:
+        elif "husband" in person_data and person_data["husband"] is not None:
             person.husband = Person.people[person_data["husband"]]
 
     return person_list
-
